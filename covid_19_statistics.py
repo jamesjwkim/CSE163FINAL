@@ -87,7 +87,7 @@ def vaccine_positive_low(data):
     
 def main():
     data = pd.read_csv(
-        r'C:\Users\Tran Do\Downloads\cse163_data/owid-covid-data.csv')
+        r'data/owid-covid-data.csv')
     gdp_cases_20_richest(data)
     gdp_cases_20_poorest(data)
     gdp_death_20_richest(data)
