@@ -20,6 +20,8 @@ def gdp_cases_20_richest(data):
                 data=gdp_cases_rich, kind='scatter', hue='location')
     plt.title('Total COVID-19 cases per million for top 20 richest countries')
     plt.xticks(rotation=-45)
+    plt.savefig('gdp_cases_20_richest.png')
+    plt.show()
     print(gdp_cases_rich)
     
     
@@ -34,6 +36,8 @@ def gdp_cases_20_poorest(data):
                 data=gdp_cases_poor, kind='scatter', hue='location')
     plt.title('Total COVID-19 cases per million for top 20 poorest countries')
     plt.xticks(rotation=-45)
+    plt.savefig('gdp_cases_20_poorest.png')
+    plt.show()
     print(gdp_cases_poor)
     
     
@@ -49,6 +53,8 @@ def gdp_death_20_richest(data):
                 data=gdp_cases_rich, kind='scatter', hue='location')
     plt.title('Total COVID-19 deaths per million for top 20 richest countries')
     plt.xticks(rotation=-45)
+    plt.savefig('gdp_death_20_richest.png')
+    plt.show()
     print(gdp_cases_rich)    
     
     
@@ -64,6 +70,8 @@ def gdp_death_20_poorest(data):
                 data=gdp_cases_poor, kind='scatter', hue='location')
     plt.title('Total COVID-19 deaths per million for top 20 poorest countries')
     plt.xticks(rotation=-45)
+    plt.savefig('gdp_death_20_poorest.png')
+    plt.show()
     print(gdp_cases_poor)
     
     
@@ -81,7 +89,9 @@ def vaccine_positive_high(data):
                 data=posi_vacc_high, kind='scatter', hue='location')
     plt.title('Relationship between 20 lowest average positive rates ' +
               'for COVID-19 and people vaccinated per hundred')
-    plt.xticks(rotation=-45)    
+    plt.xticks(rotation=-45)
+    plt.savefig('vaccine_positive_high.png')
+    plt.show()
     print(posi_vacc_high)
 
 
@@ -100,6 +110,8 @@ def vaccine_positive_low(data):
     plt.title('Relationship between 20 lowest average positive rates ' + 
               'for COVID-19 and people vaccinated per hundred')
     plt.xticks(rotation=-45)
+    plt.savefig('vaccine_positive_low.png')
+    plt.show()
     print(posi_vacc_low)
     
     
