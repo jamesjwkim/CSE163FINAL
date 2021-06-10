@@ -9,6 +9,9 @@ import matplotlib.pyplot as plt
 
 
 def gdp_cases_20_richest(data):
+    '''
+    plots and compares top 20 highest GDP country with their COVID-19 cases
+    '''
     data = data.dropna(subset=['total_cases_per_million'])
     richest = data.groupby('location')['gdp_per_capita'].mean().nlargest(20)
     total_cases = data.groupby('location')['total_cases_per_million'].max()
@@ -21,6 +24,9 @@ def gdp_cases_20_richest(data):
     
     
 def gdp_cases_20_poorest(data):
+    '''
+    plots and compares top 20 lowest GDP country with their COVID-19 cases
+    '''
     poorest = data.groupby('location')['gdp_per_capita'].mean().nsmallest(20)
     total_cases = data.groupby('location')['total_cases_per_million'].max()
     gdp_cases_poor = pd.merge(total_cases, poorest, on='location')
@@ -32,6 +38,9 @@ def gdp_cases_20_poorest(data):
     
     
 def gdp_death_20_richest(data):
+    '''
+    plots and compares top 20 highest GDP country with their COVID-19 deaths
+    '''
     data = data.dropna(subset=['total_deaths_per_million'])
     richest = data.groupby('location')['gdp_per_capita'].mean().nlargest(20)
     total_cases = data.groupby('location')['total_deaths_per_million'].max()
@@ -44,6 +53,9 @@ def gdp_death_20_richest(data):
     
     
 def gdp_death_20_poorest(data):
+    '''
+    plots and compares top 20 lowest GDP country with their COVID-19 deaths
+    '''
     data = data.dropna(subset=['total_deaths_per_million'])
     poorest = data.groupby('location')['gdp_per_capita'].mean().nsmallest(20)
     total_cases = data.groupby('location')['total_deaths_per_million'].max()
@@ -56,6 +68,9 @@ def gdp_death_20_poorest(data):
     
     
 def vaccine_positive_high(data):
+    '''
+    plots high positive rates country with their vaccination rates
+    '''
     data_vacc = data.dropna(subset=['positive_rate'])
     posi_high = data_vacc.groupby('location')['positive_rate'
                                             ].mean().nlargest(20)
@@ -71,6 +86,9 @@ def vaccine_positive_high(data):
 
 
 def vaccine_positive_low(data):
+    '''
+    plots low positive rates country with their vaccination rates
+    '''
     data_vacc = data.dropna(subset=['positive_rate'])
     posi_low = data_vacc.groupby('location')['positive_rate'
                                             ].mean().nsmallest(20)
@@ -91,6 +109,7 @@ def main():
     gdp_cases_20_richest(data)
     gdp_cases_20_poorest(data)
     gdp_death_20_richest(data)
+    gdp_death_20_poorest(data)
     vaccine_positive_high(data)
     vaccine_positive_low(data)
     
